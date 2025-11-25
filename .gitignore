@@ -18,6 +18,8 @@ database/agent_system.db
 data/vector_db/
 *.sqlite3
 *.db
+*.db-shm
+*.db-wal
 
 # Logs
 logs/
@@ -40,3 +42,6 @@ htmlcov/
 
 # Archives
 archive/
+
+# Submission helpers (not for judges)
+KAGGLE_SUBMISSION_GUIDE.md
