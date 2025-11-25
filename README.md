@@ -1,4 +1,4 @@
-# Enterprise AI Agent Orchestrator
+# AI Agents Knowledge Nexus
 
 **Kaggle AI Agents Capstone Submission** | **Track**: Enterprise Agents
 
