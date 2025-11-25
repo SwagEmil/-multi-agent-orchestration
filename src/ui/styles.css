@@ -1,0 +1,257 @@
+/* Premium Deep Blue Glassmorphism UI */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    /* Deep Blue Gradient Background */
+    --bg-gradient: linear-gradient(135deg, #0603c0 0%, #0a05e8 50%, #1408ff 100%);
+    --bg-dark: #0603c0;
+    --bg-darker: #04029a;
+
+    /* Typography - WHITE ONLY */
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.8);
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+
+    /* Accents */
+    --accent-color: #60a5fa;
+    --accent-glow: rgba(96, 165, 250, 0.4);
+}
+
+/* Main App Background */
+.stApp {
+    background: var(--bg-gradient);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+}
+
+/* Sidebar - Glass Effect */
+section[data-testid="stSidebar"] {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-right: 1px solid var(--glass-border) !important;
+}
+
+section[data-testid="stSidebar"]>div {
+    background: transparent !important;
+}
+
+/* Chat Messages - Glassmorphism */
+div[data-testid="stChatMessage"] {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--glass-shadow);
+    animation: slideIn 0.3s ease-out;
+}
+
+/* User Messages - Lighter Glass */
+div[data-testid="stChatMessage"][data-testid*="user"] {
+    background: rgba(96, 165, 250, 0.15) !important;
+    border-color: var(--accent-color);
+}
+
+/* Typography - ALL WHITE */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary) !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    line-height: 1.7;
+    color: var(--text-primary) !important;
+}
+
+/* Code Blocks */
+code {
+    font-family: 'JetBrains Mono', monospace !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+    padding: 0.2em 0.5em;
+    color: #fbbf24 !important;
+}
+
+pre {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem !important;
+}
+
+pre code {
+    background: transparent !important;
+    border: none;
+    padding: 0;
+}
+
+/* Buttons - Glass Style */
+.stButton button {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    color: white !important;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--glass-shadow);
+}
+
+.stButton button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(96, 165, 250, 0.5);
+    border-color: var(--accent-color);
+}
+
+/* Text Input - Glass Effect */
+.stTextInput input,
+.stTextArea textarea {
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.stTextInput input::placeholder,
+.stTextArea textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.stTextInput input:focus,
+.stTextArea textarea:focus {
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 4px var(--accent-glow) !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Radio Buttons */
+.stRadio>div {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+}
+
+.stRadio label {
+    color: white !important;
+}
+
+/* Captions */
+.stCaption {
+    color: var(--text-secondary) !important;
+}
+
+/* Markdown Containers */
+.element-container {
+    animation: fadeIn 0.4s ease-in;
+}
+
+/* All Text White */
+.stMarkdown,
+.stMarkdown p,
+.stMarkdown li,
+.stMarkdown span {
+    color: white !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scrollbar - Glassmorphism */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+    background-clip: padding-box;
+}
+
+/* Loading Spinner */
+.stSpinner>div {
+    border-color: var(--accent-color) transparent transparent transparent !important;
+}
+
+/* Divider */
+hr {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Success/Error Messages */
+.stSuccess,
+.stError,
+.stWarning,
+.stInfo {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    color: white !important;
+}
+
+/* Chat Input */
+.stChatInput>div {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border) !important;
+}
+
+.stChatInput input {
+    color: white !important;
+    background: transparent !important;
+}
+
+.stChatInput input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}

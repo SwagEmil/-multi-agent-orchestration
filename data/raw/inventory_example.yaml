@@ -1,0 +1,52 @@
+# Video Inventory Template
+# Fill in your videos below, then run:
+# python scripts/download_all_transcripts.py --inventory data/raw/inventory.yaml
+
+pdfs:
+  - path: "data/raw/pdfs/ai_agents_guide.pdf"
+    title: "AI Agents Comprehensive Guide"
+    pages: 342
+    topic: "fundamentals"
+    priority: high
+  
+  - path: "data/raw/pdfs/langgraph_docs.pdf"
+    title: "LangGraph Documentation"
+    pages: 178
+    topic: "frameworks"
+    priority: high
+
+youtube_videos:
+  # Example: Public video
+  - url: "https://www.youtube.com/watch?v=EXAMPLE_ID_1"
+    title: "Building Multi-Agent Systems"
+    duration: "45:30"
+    topic: "architecture"
+    priority: high
+  
+  # Example: Unlisted video (you have the link)
+  - url: "https://www.youtube.com/watch?v=EXAMPLE_ID_2"
+    title: "Advanced Agent Orchestration"
+    duration: "1:23:15"
+    topic: "orchestration"
+    priority: medium
+
+livestreams:
+  # Example: Public livestream
+  - url: "https://www.youtube.com/watch?v=EXAMPLE_ID_3"
+    title: "LangGraph Deep Dive - 3 Hour Workshop"
+    duration: "3:12:45"
+    topic: "frameworks"
+    priority: medium
+  
+  # Example: Private livestream (requires login)
+  - url: "https://www.youtube.com/watch?v=AjpjCHdIINU&list=PLqFaTIg4myu-lbBTrUpoQQIzZZxvrOaP5&index=3"
+    title: "Internal Training Session"
+    duration: "2:45:00"
+    topic: "best_practices"
+    priority: high
+
+# Instructions:
+# 1. Replace EXAMPLE_ID_X with actual YouTube video IDs
+# 2. Update titles, durations, and topics
+# 3. Add/remove entries as needed
+# 4. Run: python scripts/download_all_transcripts.py --inventory data/raw/inventory.yaml
